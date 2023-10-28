@@ -3,13 +3,13 @@ from bs4 import BeautifulSoup
 
 
 url_list = {}
-api_key = "dOC3gynkiL2RV9LfYjVAZFIaAiUcvnJYH2FuAbZtkvFnqnD88pGya9V73lQp"
+api_key = "6bc032eb9b0ad3636958fbbed4ff990cc948ce79"
 
 
 def search_movies(query):
     movies_list = []
     movies_details = {}
-    website = BeautifulSoup(requests.get(f"https://185.53.88.104/?s={query.replace(' ', '+')}").text, "html.parser")
+    website = BeautifulSoup(requests.get(f"http://5.189.163.22/?s={query.replace(' ', '+')}").text, "html.parser")
     movies = website.find_all("a", {'class': 'ml-mask jt'})
     for movie in movies:
         if movie:
